@@ -1,0 +1,16 @@
+# Refer to https://docs.protip.dev/docs/getting-started/ for documentation.
+[[proto]]
+  input_paths = [
+    "proto/",
+  ]
+
+  [proto.go]
+    output_path = "golang/internal/"
+    grpc = true
+
+  [proto.js]
+    output_path = "typescript/client/src/"
+
+  [proto.grpcweb]
+    output_path = "typescript/client/src/"
+    typescript = true

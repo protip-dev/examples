@@ -1,0 +1,10 @@
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbar {
+  font-size: 2em;
+  padding-left: 0;
+  padding-right: 0;
+}

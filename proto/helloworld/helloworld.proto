@@ -1,0 +1,41 @@
+// Copyright (c) 2020 Roundtrip Systems Inc. All rights reserved.
+
+syntax = "proto3";
+
+package protip.examples.helloworld;
+
+// By default the Go package name would be "protip_examples_helloworld".
+// 
+// Protip can enforce this standard via the lint feature.
+option go_package = "helloworld";
+
+import "google/protobuf/timestamp.proto";
+
+// HelloWorld is an example gRPC service.
+service HelloWorld {
+  // SayHello returns "hello" for a given language.
+  //
+  // Returns NotFound error if translation for a given language is not found.
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {}
+
+  // CurrentTime returns the current server time.
+  rpc CurrentTime(CurrentTimeRequest) returns (CurrentTimeResponse) {}
+}
+
+message SayHelloRequest {
+  // Two-letter ISO 639-1 language code, defaults to "en".
+  string language = 1;
+}
+
+message SayHelloResponse {
+  // The word "hello" for the given language.
+  string hello = 1;
+}
+
+message CurrentTimeRequest {
+}
+  
+message CurrentTimeResponse {
+  // The current server time.
+  google.protobuf.Timestamp current_time = 1;
+}
